@@ -14,7 +14,7 @@ int main()
     struct persona* pArrayPersona;
     struct persona* pAuxPersona;
 // Creamos el array de personas
-    pArrayPersona = malloc(sizeof(struct persona));
+    pArrayPersona = (struct persona*)malloc(sizeof(struct persona));
     if (pArrayPersona == NULL)
     {
         printf("\nNo hay lugar en memoria\n");
@@ -34,7 +34,7 @@ int main()
 // Calculamos el nuevo tamaño del array
             auxNuevaLogitud = sizeof(struct persona) * logitudPersonas;
 // Redimencionamos la lista
-            pAuxPersona = realloc( pArrayPersona, auxNuevaLogitud);
+            pAuxPersona = (struct persona*)realloc( pArrayPersona, auxNuevaLogitud);
             if (pAuxPersona == NULL)
             {
                 printf("\nNo hay lugar en memoria\n");
